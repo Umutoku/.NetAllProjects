@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "pBVxUm6G6qAHUvOJIpfF0kSnYxQfQQcLO+/sA4pt26qLXGHCsZbYn/Q9aT6fgCx1aSPi5UyHWyE4/8yu6Ym2hg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\umuto\\source\\repos\\.NetAllCourses\\UdemyCoreLibrary\\RateLimitAPI\\RateLimitAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\umuto\\.nuget\\packages\\aspnetcoreratelimit\\4.0.1\\aspnetcoreratelimit.4.0.1.nupkg.sha512",
+    "C:\\Users\\umuto\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\umuto\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\umuto\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\umuto\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\umuto\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\umuto\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

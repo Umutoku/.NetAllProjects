@@ -1,0 +1,1042 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 20 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f
+// command took 2,58s and exited with 0
+// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f
+// command took 14,23s and exited with 1
+// start dotnet  build -c Release --no-restore --no-dependencies /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f
+// command took 2,08s and exited with 0
+// ***** Done, took 00:00:19 (19.56 sec)   *****
+// Found 20 benchmarks:
+//   Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+//   Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+//   Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+//   Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+//   Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+//   Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+//   Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+//   Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+//   Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+//   Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+//   Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+//   Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+//   Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+//   Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+//   Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+//   Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+//   Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+//   Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+//   Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+//   Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToJson(BookCount: 1)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 0 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-JWPOXJ(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 378600.00 ns, 378.6000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\json_sample_1.json'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 35
+   at BenchmarkDotNet.Autogenerated.Runnable_0.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 320
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_0.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 177
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 15960 has exited with code -1.
+
+// ** Remained 19 (%95,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePack(BookCount: 1)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 1 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-QTLARH(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 367900.00 ns, 367.9000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_sample_1.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, Byte[] content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 74
+   at Serializers.ToMessagePack() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_1.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 522
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_1.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 379
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 27376 has exited with code -1.
+
+// ** Remained 18 (%90,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePackJson(BookCount: 1)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 2 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-BGUFGS(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 256700.00 ns, 256.7000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_Json_sample_1.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToMessagePackJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 49
+   at BenchmarkDotNet.Autogenerated.Runnable_2.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 724
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_2.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 581
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 30572 has exited with code -1.
+
+// ** Remained 17 (%85,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToProtobuf(BookCount: 1)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 3 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-IVYGJX(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 219800.00 ns, 219.8000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\protobuf_sample_1.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.ToProtobuf() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 55
+   at BenchmarkDotNet.Autogenerated.Runnable_3.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 926
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_3.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 783
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 19372 has exited with code -1.
+
+// ** Remained 16 (%80,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToJson(BookCount: 10)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 4 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-MHOTYM(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 277800.00 ns, 277.8000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\json_sample_10.json'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 35
+   at BenchmarkDotNet.Autogenerated.Runnable_4.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1128
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_4.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 985
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 19864 has exited with code -1.
+
+// ** Remained 15 (%75,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePack(BookCount: 10)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 5 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-DMFACK(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 377600.00 ns, 377.6000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_sample_10.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, Byte[] content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 74
+   at Serializers.ToMessagePack() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_5.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1330
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_5.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1187
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 27064 has exited with code -1.
+
+// ** Remained 14 (%70,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePackJson(BookCount: 10)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 6 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-LATRVC(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 336300.00 ns, 336.3000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_Json_sample_10.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToMessagePackJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 49
+   at BenchmarkDotNet.Autogenerated.Runnable_6.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1532
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_6.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1389
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 30084 has exited with code -1.
+
+// ** Remained 13 (%65,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToProtobuf(BookCount: 10)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 7 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-HLMRSE(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 268800.00 ns, 268.8000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\protobuf_sample_10.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.ToProtobuf() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 55
+   at BenchmarkDotNet.Autogenerated.Runnable_7.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1734
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_7.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1591
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 2188 has exited with code -1.
+
+// ** Remained 12 (%60,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToJson(BookCount: 1000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 8 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-VBKRVJ(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 251200.00 ns, 251.2000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\json_sample_1000.json'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 35
+   at BenchmarkDotNet.Autogenerated.Runnable_8.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1936
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_8.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1793
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 23356 has exited with code -1.
+
+// ** Remained 11 (%55,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePack(BookCount: 1000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 9 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-QYUJHJ(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 319500.00 ns, 319.5000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_sample_1000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, Byte[] content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 74
+   at Serializers.ToMessagePack() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_9.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2138
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_9.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 1995
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 21512 has exited with code -1.
+
+// ** Remained 10 (%50,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePackJson(BookCount: 1000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 10 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-FNENXC(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 320300.00 ns, 320.3000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_Json_sample_1000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToMessagePackJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 49
+   at BenchmarkDotNet.Autogenerated.Runnable_10.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2340
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_10.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2197
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 25528 has exited with code -1.
+
+// ** Remained 9 (%45,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToProtobuf(BookCount: 1000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 11 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-AQJHIP(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 287800.00 ns, 287.8000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\protobuf_sample_1000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.ToProtobuf() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 55
+   at BenchmarkDotNet.Autogenerated.Runnable_11.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2542
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_11.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2399
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 26668 has exited with code -1.
+
+// ** Remained 8 (%40,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToJson(BookCount: 10000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 12 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-ZPVSPR(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 223000.00 ns, 223.0000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\json_sample_10000.json'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 35
+   at BenchmarkDotNet.Autogenerated.Runnable_12.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2744
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_12.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2601
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 30220 has exited with code -1.
+
+// ** Remained 7 (%35,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePack(BookCount: 10000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 13 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-HORSSD(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 369300.00 ns, 369.3000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_sample_10000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, Byte[] content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 74
+   at Serializers.ToMessagePack() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_13.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2946
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_13.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 2803
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 7252 has exited with code -1.
+
+// ** Remained 6 (%30,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePackJson(BookCount: 10000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 14 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-UWXOVF(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 225900.00 ns, 225.9000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_Json_sample_10000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToMessagePackJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 49
+   at BenchmarkDotNet.Autogenerated.Runnable_14.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3148
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_14.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3005
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 22884 has exited with code -1.
+
+// ** Remained 5 (%25,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToProtobuf(BookCount: 10000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 15 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-UHJWNV(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 233800.00 ns, 233.8000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\protobuf_sample_10000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.ToProtobuf() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 55
+   at BenchmarkDotNet.Autogenerated.Runnable_15.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3350
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_15.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3207
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 27492 has exited with code -1.
+
+// ** Remained 4 (%20,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToJson(BookCount: 100000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 16 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-TNJOSM(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 273200.00 ns, 273.2000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\json_sample_100000.json'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 35
+   at BenchmarkDotNet.Autogenerated.Runnable_16.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3552
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_16.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3409
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 20180 has exited with code -1.
+
+// ** Remained 3 (%15,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePack(BookCount: 100000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 17 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-IOUKBE(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 332200.00 ns, 332.2000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_sample_100000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, Byte[] content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 74
+   at Serializers.ToMessagePack() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 41
+   at BenchmarkDotNet.Autogenerated.Runnable_17.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3754
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_17.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3611
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 29204 has exited with code -1.
+
+// ** Remained 2 (%10,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToMessagePackJson(BookCount: 100000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 18 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-TJHXCL(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 234300.00 ns, 234.3000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\mPack_Json_sample_100000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.WriteToFile(String fileName, String content) in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 63
+   at Serializers.ToMessagePackJson() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 49
+   at BenchmarkDotNet.Autogenerated.Runnable_18.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3956
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_18.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 3813
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 26728 has exited with code -1.
+
+// ** Remained 1 (%5,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: Yüksek performans)
+// **************************
+// Benchmark: Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b5adbea7-a853-4526-9ad3-30a4512f186f.dll --benchmarkName "Serializers.ToProtobuf(BookCount: 100000)" --job "Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3" --benchmarkId 19 in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\bin\Release\net7.0
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: Job-ZWAVXL(MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3)
+
+OverheadJitting  1: 1 op, 236500.00 ns, 236.5000 us/op
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.IO.DirectoryNotFoundException: Could not find a part of the path 'c:\projects\data\protobuf_sample_100000.bin'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Serializers.ToProtobuf() in C:\Users\umuto\source\repos\SerializationPerformance\Serializers.cs:line 55
+   at BenchmarkDotNet.Autogenerated.Runnable_19.WorkloadActionNoUnroll(Int64 invokeCount) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 4158
+   at BenchmarkDotNet.Engines.Engine.RunIteration(IterationData data)
+   at BenchmarkDotNet.Engines.EngineFactory.Jit(Engine engine, Int32 jitIndex, Int32 invokeCount, Int32 unrollFactor)
+   at BenchmarkDotNet.Engines.EngineFactory.CreateReadyToRun(EngineParameters engineParameters)
+   at BenchmarkDotNet.Autogenerated.Runnable_19.Run(IHost host, String benchmarkName) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 4015
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   --- End of inner exception stack trace ---
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at BenchmarkDotNet.Autogenerated.UniqueProgramName.AfterAssemblyLoadingAttached(String[] args) in C:\Users\umuto\source\repos\SerializationPerformance\bin\release\net7.0\b5adbea7-a853-4526-9ad3-30a4512f186f\b5adbea7-a853-4526-9ad3-30a4512f186f.notcs:line 58
+// AfterAll
+No Workload Results were obtained from the run.
+// Benchmark Process 21636 has exited with code -1.
+
+// ** Remained 0 (%0,0) benchmark(s) to run. Estimated finish 2022-10-31 15:13 (0h 0m from now) **
+Successfully reverted power plan (GUID: 381b4222-f694-41f0-9685-ff5bb260df2e FriendlyName: Dengeli)
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts\results\Serializers-report.csv
+  BenchmarkDotNet.Artifacts\results\Serializers-report-default.md
+  BenchmarkDotNet.Artifacts\results\Serializers-report.html
+  BenchmarkDotNet.Artifacts\results\Serializers-report.asciidoc
+  BenchmarkDotNet.Artifacts\results\Serializers-measurements.csv
+RPlotExporter couldn't find Rscript.exe in your PATH and no R_HOME environment variable is defined
+  BenchmarkDotNet.Artifacts\results\BuildPlots.R
+
+// * Detailed results *
+Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+Runtime = .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2; GC = Concurrent Workstation
+There are not any results runs
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.2, OS=Windows 11 (10.0.22621.674)
+Intel Core i7-1065G7 CPU 1.30GHz, 1 CPU, 8 logical and 4 physical cores
+.NET SDK=7.0.100-rc.2.22477.23
+  [Host]     : .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+  Job-JRSWLJ : .NET 7.0.0 (7.0.22.47203), X64 RyuJIT AVX2
+
+Runtime=.NET 7.0  MaxIterationCount=5  MaxWarmupIterationCount=8  
+MinIterationCount=3  
+
+|            Method | BookCount | Mean | Error |
+|------------------ |---------- |-----:|------:|
+|            ToJson |         1 |   NA |    NA |
+|     ToMessagePack |         1 |   NA |    NA |
+| ToMessagePackJson |         1 |   NA |    NA |
+|        ToProtobuf |         1 |   NA |    NA |
+|            ToJson |        10 |   NA |    NA |
+|     ToMessagePack |        10 |   NA |    NA |
+| ToMessagePackJson |        10 |   NA |    NA |
+|        ToProtobuf |        10 |   NA |    NA |
+|            ToJson |      1000 |   NA |    NA |
+|     ToMessagePack |      1000 |   NA |    NA |
+| ToMessagePackJson |      1000 |   NA |    NA |
+|        ToProtobuf |      1000 |   NA |    NA |
+|            ToJson |     10000 |   NA |    NA |
+|     ToMessagePack |     10000 |   NA |    NA |
+| ToMessagePackJson |     10000 |   NA |    NA |
+|        ToProtobuf |     10000 |   NA |    NA |
+|            ToJson |    100000 |   NA |    NA |
+|     ToMessagePack |    100000 |   NA |    NA |
+| ToMessagePackJson |    100000 |   NA |    NA |
+|        ToProtobuf |    100000 |   NA |    NA |
+
+Benchmarks with issues:
+  Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+  Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+  Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+  Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1]
+  Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+  Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+  Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+  Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10]
+  Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+  Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+  Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+  Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=1000]
+  Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+  Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+  Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+  Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=10000]
+  Serializers.ToJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+  Serializers.ToMessagePack: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+  Serializers.ToMessagePackJson: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+  Serializers.ToProtobuf: Job-JRSWLJ(Runtime=.NET 7.0, MaxIterationCount=5, MaxWarmupIterationCount=8, MinIterationCount=3) [BookCount=100000]
+
+// * Warnings *
+Environment
+  Summary -> Detected error exit code from one of the benchmarks. It might be caused by following antivirus software:
+        - Windows Defender (windowsdefender://)
+Use InProcessEmitToolchain or InProcessNoEmitToolchain to avoid new process creation.
+
+// * Config Issues *
+
+// * Warnings *
+Configuration
+  Summary -> The exporter BenchmarkDotNet.Exporters.MarkdownExporter is already present in configuration. There may be unexpected results.
+  Summary -> The exporter BenchmarkDotNet.Exporters.HtmlExporter is already present in configuration. There may be unexpected results.
+  Summary -> The exporter BenchmarkDotNet.Exporters.Csv.CsvExporter is already present in configuration. There may be unexpected results.
+
+// * Legends *
+  BookCount : Value of the 'BookCount' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  1 ns      : 1 Nanosecond (0.000000001 sec)
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:07 (7.28 sec), executed benchmarks: 20
+
+Global total time: 00:00:27 (27.83 sec), executed benchmarks: 20
+// * Artifacts cleanup *

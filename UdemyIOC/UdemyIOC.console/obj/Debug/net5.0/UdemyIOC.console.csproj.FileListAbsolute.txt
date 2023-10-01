@@ -1,0 +1,16 @@
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\bin\Debug\net5.0\UdemyIOC.console.exe
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\bin\Debug\net5.0\UdemyIOC.console.deps.json
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\bin\Debug\net5.0\UdemyIOC.console.runtimeconfig.json
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\bin\Debug\net5.0\UdemyIOC.console.runtimeconfig.dev.json
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\bin\Debug\net5.0\UdemyIOC.console.dll
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\bin\Debug\net5.0\UdemyIOC.console.pdb
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\UdemyIOC.console.csproj.AssemblyReference.cache
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\UdemyIOC.console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\UdemyIOC.console.AssemblyInfoInputs.cache
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\UdemyIOC.console.AssemblyInfo.cs
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\UdemyIOC.console.csproj.CoreCompileInputs.cache
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\UdemyIOC.console.dll
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\refint\UdemyIOC.console.dll
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\UdemyIOC.console.pdb
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\UdemyIOC.console.genruntimeconfig.cache
+C:\Users\umuto\source\repos\UdemyIOC\UdemyIOC.console\obj\Debug\net5.0\ref\UdemyIOC.console.dll

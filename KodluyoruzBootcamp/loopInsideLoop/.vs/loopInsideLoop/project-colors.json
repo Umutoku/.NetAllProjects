@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dfb39036-aa81-4f04-a910-aac9ef8baa86": {
+      "ProjectGuid": "dfb39036-aa81-4f04-a910-aac9ef8baa86",
+      "DisplayName": "loopInsideLoop",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

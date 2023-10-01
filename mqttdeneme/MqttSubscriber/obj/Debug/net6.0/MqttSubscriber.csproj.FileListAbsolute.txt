@@ -1,0 +1,5 @@
+C:\Users\umuto\source\repos\mqttdeneme\MqttSubscriber\obj\Debug\net6.0\MqttSubscriber.csproj.AssemblyReference.cache
+C:\Users\umuto\source\repos\mqttdeneme\MqttSubscriber\obj\Debug\net6.0\MqttSubscriber.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umuto\source\repos\mqttdeneme\MqttSubscriber\obj\Debug\net6.0\MqttSubscriber.AssemblyInfoInputs.cache
+C:\Users\umuto\source\repos\mqttdeneme\MqttSubscriber\obj\Debug\net6.0\MqttSubscriber.AssemblyInfo.cs
+C:\Users\umuto\source\repos\mqttdeneme\MqttSubscriber\obj\Debug\net6.0\MqttSubscriber.csproj.CoreCompileInputs.cache

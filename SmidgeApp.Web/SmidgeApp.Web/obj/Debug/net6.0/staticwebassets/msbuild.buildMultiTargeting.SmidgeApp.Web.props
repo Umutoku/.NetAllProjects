@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SmidgeApp.Web.props" />
+</Project>

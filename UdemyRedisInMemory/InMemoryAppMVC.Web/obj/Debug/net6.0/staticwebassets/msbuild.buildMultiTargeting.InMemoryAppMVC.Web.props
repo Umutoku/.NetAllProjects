@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\InMemoryAppMVC.Web.props" />
+</Project>

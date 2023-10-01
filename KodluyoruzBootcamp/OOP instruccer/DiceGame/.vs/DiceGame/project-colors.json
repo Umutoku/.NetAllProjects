@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ce2347f6-1e18-4d8a-bc48-977747df22e9": {
+      "ProjectGuid": "ce2347f6-1e18-4d8a-bc48-977747df22e9",
+      "DisplayName": "DiceGame",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,11 @@
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\bin\Debug\netstandard2.1\RedisExampleApp.Cache.deps.json
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\bin\Debug\netstandard2.1\RedisExampleApp.Cache.dll
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\bin\Debug\netstandard2.1\RedisExampleApp.Cache.pdb
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\obj\Debug\netstandard2.1\RedisExampleApp.Cache.csproj.AssemblyReference.cache
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\obj\Debug\netstandard2.1\RedisExampleApp.Cache.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\obj\Debug\netstandard2.1\RedisExampleApp.Cache.AssemblyInfoInputs.cache
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\obj\Debug\netstandard2.1\RedisExampleApp.Cache.AssemblyInfo.cs
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\obj\Debug\netstandard2.1\RedisExampleApp.Cache.csproj.CoreCompileInputs.cache
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\obj\Debug\netstandard2.1\RedisExampleApp.Cache.sourcelink.json
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\obj\Debug\netstandard2.1\RedisExampleApp.Cache.dll
+C:\Users\umuto\source\repos\.NetAllCourses\RedisExampleApp\RedisExampleApp.Cache\obj\Debug\netstandard2.1\RedisExampleApp.Cache.pdb

@@ -1,0 +1,10 @@
+﻿
+dotnet ef dbcontext scaffold "Server=UMUT;Database=AdventureWorks2017;Persist Security Info=False;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+
+Scaffold-DbContext "Data Source=UMUT;Initial Catalog=AdventureWorks2017;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Tables Production.ProductCategory,Production.ProductSubCategory,Production.Product
+
+
+dotnet ef dbcontext scaffold "Data Source=UMUT;Initial Catalog=AdventureWorks2017;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False" Microsoft.EntityFrameworkCore.SqlServer - OutputDir Models - Tables "Production.ProductCategory,Production.ProductSubCategory,Production.Product"
+
+    Scaffold - DbContext "Server=.\sqlexpress;Database=AdventureWorks2017;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer - OutputDir Models - Tables "Production.ProductCategory,Production.ProductSubCategory,Production.Product" - force

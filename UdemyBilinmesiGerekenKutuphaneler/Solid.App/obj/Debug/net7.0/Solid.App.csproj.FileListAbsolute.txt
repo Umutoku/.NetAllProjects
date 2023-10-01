@@ -1,0 +1,15 @@
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\bin\Debug\net7.0\Solid.App.exe
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\bin\Debug\net7.0\Solid.App.deps.json
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\bin\Debug\net7.0\Solid.App.runtimeconfig.json
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\bin\Debug\net7.0\Solid.App.dll
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\bin\Debug\net7.0\Solid.App.pdb
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\Solid.App.csproj.AssemblyReference.cache
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\Solid.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\Solid.App.AssemblyInfoInputs.cache
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\Solid.App.AssemblyInfo.cs
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\Solid.App.csproj.CoreCompileInputs.cache
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\Solid.App.dll
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\refint\Solid.App.dll
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\Solid.App.pdb
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\Solid.App.genruntimeconfig.cache
+C:\Users\umuto\source\repos\UdemyBilinmesiGerekenKutuphaneler\Solid.App\obj\Debug\net7.0\ref\Solid.App.dll

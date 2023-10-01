@@ -1,0 +1,12 @@
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\bin\Debug\net5.0\Directory.Model.deps.json
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\bin\Debug\net5.0\Directory.Model.dll
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\bin\Debug\net5.0\Directory.Model.pdb
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\Directory.Model.csproj.AssemblyReference.cache
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\Directory.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\Directory.Model.AssemblyInfoInputs.cache
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\Directory.Model.AssemblyInfo.cs
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\Directory.Model.csproj.CoreCompileInputs.cache
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\Directory.Model.dll
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\refint\Directory.Model.dll
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\Directory.Model.pdb
+C:\Users\umuto\source\repos\Mvc\Directory\Directory.Model\obj\Debug\net5.0\ref\Directory.Model.dll

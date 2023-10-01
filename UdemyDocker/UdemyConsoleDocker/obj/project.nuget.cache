@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "jCZ4S8h4elq6xUIZJ+I3UPEAdK1N9arlRQy45OnoWSHk2eKC5dYPDk71c55n2QvfRNJuhylmtdSNk7RCjzD2+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\umuto\\source\\repos\\UdemyDocker\\UdemyConsoleDocker\\UdemyConsoleDocker.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\umuto\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://bellatrix:8080/tfs/KocDigitalCollection/_packaging/CosmosNugetServerv1/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    },
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://bellatrix:8080/tfs/KocDigitalCollection/_packaging/Platform360Core/nuget/v3/index.json'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}

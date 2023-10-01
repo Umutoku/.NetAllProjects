@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\InMemoryAppMVC.Web.props" />
+</Project>

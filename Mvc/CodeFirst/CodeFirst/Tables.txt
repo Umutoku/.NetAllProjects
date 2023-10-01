@@ -1,0 +1,27 @@
+﻿-AppUser
+
+-AppUserDetail
+
+-Product
+
+-Order
+
+-orderdetail
+
+--------------
+
+one to one
+appuser - appuserdetail
+
+
+one to many
+appuser - order
+product- category
+product- orderdetail
+order-orderdetail
+
+many to many
+
+product - order
+
+

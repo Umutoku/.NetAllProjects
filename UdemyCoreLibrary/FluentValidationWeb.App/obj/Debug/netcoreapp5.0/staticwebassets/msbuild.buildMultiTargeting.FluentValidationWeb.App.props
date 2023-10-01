@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FluentValidationWeb.App.props" />
+</Project>

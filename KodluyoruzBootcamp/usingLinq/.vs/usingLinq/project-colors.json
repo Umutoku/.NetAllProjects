@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ac50eecd-74a3-43cf-9ccc-e4520438c32a": {
+      "ProjectGuid": "ac50eecd-74a3-43cf-9ccc-e4520438c32a",
+      "DisplayName": "usingLinq",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

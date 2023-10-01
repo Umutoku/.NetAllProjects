@@ -1,0 +1,10 @@
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\bin\Debug\ParallelForForEachCancellationApp.exe.config
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\bin\Debug\ParallelForForEachCancellationApp.exe
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\bin\Debug\ParallelForForEachCancellationApp.pdb
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\obj\Debug\ParallelForForEachCancellationApp.csproj.AssemblyReference.cache
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\obj\Debug\ParallelForForEachCancellationApp.Form1.resources
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\obj\Debug\ParallelForForEachCancellationApp.Properties.Resources.resources
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\obj\Debug\ParallelForForEachCancellationApp.csproj.GenerateResource.cache
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\obj\Debug\ParallelForForEachCancellationApp.csproj.CoreCompileInputs.cache
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\obj\Debug\ParallelForForEachCancellationApp.exe
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ParallelForForEachCancellationApp\obj\Debug\ParallelForForEachCancellationApp.pdb

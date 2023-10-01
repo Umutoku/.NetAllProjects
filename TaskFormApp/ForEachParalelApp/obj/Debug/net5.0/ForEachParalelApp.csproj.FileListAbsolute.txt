@@ -1,0 +1,16 @@
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\bin\Debug\net5.0\ForEachParalelApp.exe
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\bin\Debug\net5.0\ForEachParalelApp.deps.json
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\bin\Debug\net5.0\ForEachParalelApp.runtimeconfig.json
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\bin\Debug\net5.0\ForEachParalelApp.runtimeconfig.dev.json
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\bin\Debug\net5.0\ForEachParalelApp.dll
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\bin\Debug\net5.0\ForEachParalelApp.pdb
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ForEachParalelApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ForEachParalelApp.AssemblyInfoInputs.cache
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ForEachParalelApp.AssemblyInfo.cs
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ForEachParalelApp.csproj.CoreCompileInputs.cache
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ForEachParalelApp.sourcelink.json
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ForEachParalelApp.dll
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\refint\ForEachParalelApp.dll
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ForEachParalelApp.pdb
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ForEachParalelApp.genruntimeconfig.cache
+C:\Users\umuto\source\repos\.NetAllCourses\TaskFormApp\ForEachParalelApp\obj\Debug\net5.0\ref\ForEachParalelApp.dll
