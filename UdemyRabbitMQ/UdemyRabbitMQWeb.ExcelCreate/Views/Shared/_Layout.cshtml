@@ -60,6 +60,22 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.17/signalr.min.js" integrity="sha512-SdlPIUjPfEVbvsMDCAhKibsjqbBx6I6m5yjUaR+vXPpSG0HUgK14Vy1VzVzDoVDisJhmzM2RiCffwYv8Jsk5vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            var connection = new signalR.HubConnectionBuilder().withUrl("/MyHub").build();
+            function start() {
+                connection.start().then().catch((err) => {
+                    console.log(err);
+                    setTimeout(() => start(), 2000);
+                })
+            }
+            connection.on("Completed", () => {
+                console.log("excel oluşturma bitti.")
+            })
+
+        })
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
