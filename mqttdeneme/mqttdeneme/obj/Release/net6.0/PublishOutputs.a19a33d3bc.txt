@@ -1,7 +1,0 @@
-C:\Users\umuto\source\repos\mqttdeneme\mqttdeneme\bin\Release\net6.0\publish\mqttdeneme.exe
-C:\Users\umuto\source\repos\mqttdeneme\mqttdeneme\bin\Release\net6.0\publish\mqttdeneme.dll
-C:\Users\umuto\source\repos\mqttdeneme\mqttdeneme\bin\Release\net6.0\publish\mqttdeneme.deps.json
-C:\Users\umuto\source\repos\mqttdeneme\mqttdeneme\bin\Release\net6.0\publish\mqttdeneme.runtimeconfig.json
-C:\Users\umuto\source\repos\mqttdeneme\mqttdeneme\bin\Release\net6.0\publish\mqttdeneme.pdb
-C:\Users\umuto\source\repos\mqttdeneme\mqttdeneme\bin\Release\net6.0\publish\MQTTnet.dll
-C:\Users\umuto\source\repos\mqttdeneme\mqttdeneme\bin\Release\net6.0\publish\MQTTnet.Extensions.ManagedClient.dll
