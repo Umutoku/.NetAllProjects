@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Index2";
+}
+
+@section Scripts
+    {
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script type="text/javascript">
+        var connection = new signalR.HubConnectionBuilder().configureLogging(signalR.LogLevel.Error).withAutomaticReconnect().withUrl("/MyHub").build();
+
+        connection.start().then(()=> {
+            console.log(connection.State);
+            connection.invoke("SendMessage","ilk mesaj");
+        }).catch((err) => {
+            console.log(err);
+        })
+        connection.on("ReceiveMessage", (message) => {
+            console.log(message);
+        })
+
+    </script>
+    
+    }
+
+        
+
+            
