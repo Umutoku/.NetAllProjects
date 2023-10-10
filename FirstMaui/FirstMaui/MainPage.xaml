@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:FirstMaui.ViewModel"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:DataType="viewModel:MainViewModel"
+             x:Class="FirstMaui.MainPage">
+
+
+    <Grid RowDefinitions="140, Auto,Auto,Auto, *" ColumnDefinitions=".80*, .20*" Padding="12">
+        <mct:DrawingView
+            x:Name="myDrawing"
+            WidthRequest="150"
+            HeightRequest="150"
+            BackgroundColor="Gray"
+            IsMultiLineModeEnabled="True" 
+            DrawingLineCompleted="DrawingView_DrawingLineCompleted"
+            HorizontalOptions="Start"/>
+          <!--IsMultilinemode Yazmaya devam edebiliyoruz-->
+        <Image Grid.ColumnSpan="2"
+               x:Name="rightImage"
+               WidthRequest="150"
+               HeightRequest="150"
+               Source="circle.png"
+               BackgroundColor="Blue"
+               HorizontalOptions="End">
+        </Image>
+
+        <Entry Placeholder="Bir renk girin:"
+               PlaceholderColor="Blue"
+               Grid.Row="1"
+               Text="{Binding Color}"
+               x:Name="ColorNameEntry"
+               ></Entry>
+        <Button Text="Renk Ekle" Grid.Row="1" Grid.Column="1" Command="{Binding AddColorCommand}"></Button>
+        <Button Text="Renk Sil" 
+                Grid.Row="2" 
+                Grid.Column="2" 
+                Command="{Binding RemoveColorCommand}"
+                CommandParameter="{Binding Source={x:Reference ColorNameEntry},Path=Text}"
+                ></Button>
+        <Button
+                x:Name="CounterBtn"
+                Text="Click Play"
+                Grid.Row="2" 
+                Grid.Column="2" 
+                SemanticProperties.Hint="click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+        <CollectionView Grid.Row="4" Grid.ColumnSpan="2" ItemsSource="{Binding ColorItems}">
+            <!--<CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Mavi</x:String>
+                    <x:String>Yeşil</x:String>
+                    <x:String>Sarı</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>-->
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="x:Type x:String">
+                    <Grid Padding="0, 4">
+                        <Frame>
+                            <Label Text="{Binding .}" FontSize="Medium"></Label>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
+    <!--<ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, Veysi!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>-->
+
+</ContentPage>

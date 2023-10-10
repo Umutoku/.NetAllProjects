@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoApp.MainPage">
+
+    <Grid>
+        <StackLayout x:Name="stackLIn" VerticalOptions="Center" Spacing="15" Padding="15">
+            <Entry Text="{Binding Email}" Placeholder="E-mail" />
+            <Entry Text="{Binding Password}" Placeholder="Password"/>
+            <Button Text="Sign In" Clicked="Button_ClickedSignInAsync"/>
+            <Button BackgroundColor="Transparent" Clicked="Button_ClickedSign" Text="I do not have an account" TextColor="Black"/>
+        </StackLayout>
+        <StackLayout IsVisible="false" x:Name="stackLJoin" VerticalOptions="Center" Spacing="15" Padding="15">
+            <Entry Text="{Binding UserName}" Placeholder="Account Name"/>
+            <Entry Text="{Binding Email}" Placeholder="E-mail"/>
+            <Entry Text="{Binding Password}" Placeholder="Password"/>
+            <Button Text="Sign Up" Clicked="Button_ClickedSignUpAsync"/>
+            <Button Text="I have an account" Clicked="Button_ClickedSign" TextColor="Black" BackgroundColor="Transparent"/>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

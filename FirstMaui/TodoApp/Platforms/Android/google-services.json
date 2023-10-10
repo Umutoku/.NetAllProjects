@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1075230480670",
+    "project_id": "fir-maui-b490a",
+    "storage_bucket": "fir-maui-b490a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075230480670:android:8f302499391c1c0709910f",
+        "android_client_info": {
+          "package_name": "com.companyname.todoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq9_6CzKeG3Ag1H3JZ97r0T45WKSyjby8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

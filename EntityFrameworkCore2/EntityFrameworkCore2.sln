@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCore2", "EntityFrameworkCore2\EntityFrameworkCore2.csproj", "{2A899256-7CDB-4B2C-AF9A-154FBBBD2CDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCore2", "EntityFrameworkCore2\EntityFrameworkCore2.csproj", "{2A899256-7CDB-4B2C-AF9A-154FBBBD2CDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyEFCore.CodeFirst", "UdemyEFCore.CodeFirst\UdemyEFCore.CodeFirst.csproj", "{00A89994-BE03-45E9-A243-F829FD6CCA15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CDE8372B-3847-4A93-AEF5-DF25CE04AF9E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,10 @@ Global
 		{2A899256-7CDB-4B2C-AF9A-154FBBBD2CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A899256-7CDB-4B2C-AF9A-154FBBBD2CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A899256-7CDB-4B2C-AF9A-154FBBBD2CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00A89994-BE03-45E9-A243-F829FD6CCA15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A89994-BE03-45E9-A243-F829FD6CCA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A89994-BE03-45E9-A243-F829FD6CCA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A89994-BE03-45E9-A243-F829FD6CCA15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
