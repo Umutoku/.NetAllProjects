@@ -16,6 +16,6 @@ namespace UdemyEFCore.CodeFirst.DAL
         public string Color { get; set; }
         public int ProductId { get; set; }
         //[ForeignKey(nameof(ProductId))] //custom isim vermek istersek 
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

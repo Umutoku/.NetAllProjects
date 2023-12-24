@@ -7,9 +7,117 @@ Initializer.Build();
 
 using(var _context = new AppDbContext())
 {
+    //view üzerinden veri çekme
+    var product = _context.ProductFulls.ToList();
 
 
 
+    var id = 5;
+    //Raw sql ile veri çekme
+    var products = _context.Products.FromSqlRaw("select * from Products where id={0}",id).ToList();
+    
+    //Interpolated ile veri çekme
+    var productss = _context.Products.FromSqlInterpolated($"select * from Products where id={id}").ToList();
+
+
+
+
+    //Select içerisinde field alanlarını çekmek için null karşılığı olmayan tüm veriyi çekiyoruz
+    //Bu yüzden yeni bir entity oluşturduk ama hala products üzerinden çekiyoruz
+    var productEssential = _context.ProductEssentials.FromSqlRaw("select Id,Name,Price from Products").ToList();
+
+    //Left join
+    var result3 = (from pf in _context.ProductFeatures
+                  join p in _context.Products on pf.Id equals p.Id into g //left join işlemi
+                  from p in g.DefaultIfEmpty()
+                  select new { 
+                      ProductName = p.Name,
+                      ProductColor = pf.Color,
+                      ProductWidth = (int?)pf.Width== null? 5 : pf.Width //null olabilir
+                       }).ToList();
+
+    //Right join
+    var result4 = (from p in _context.Products
+                   join pf in _context.ProductFeatures on p.Id equals pf.Id into g //Right join işlemi, üstekinin tersi
+                   from pf in g.DefaultIfEmpty()
+                   select new
+                   {
+                       ProductName = p.Name,
+                       ProductColor = pf.Color,
+                       ProductWidth = (int?)pf.Width == null ? 5 : pf.Width //null olabilir
+                   }).ToList();
+
+
+
+    //Inner join LinQ
+    var result = _context.Categories.Join(_context.Products, c => c.Id, p => p.CategoryId, (c, p) => new {c,p})
+                                    .Join(_context.ProductFeatures,x=>x.p.Id,y=>y.Id,(c,pf) => new {
+                                    ProductName = c.p.Name,
+                                    ProductColor = pf.Color,
+                                    CategoryName  = c.c.Name
+                                    }).ToList();
+                                    
+    var outerJoin =result4.Union(result3); //union ile birleştirme işlemi
+
+
+    var result2 = (from c in _context.Categories
+                  join p in _context.Products on c.Id equals p.CategoryId
+                  join pf in _context.ProductFeatures on p.Id equals pf.Id
+                  select new
+                  {
+                      ProductColor = pf.Color,
+                      CategoryName = c.Name,
+                      ProductName = p.Name
+                  }).ToList();
+
+
+    _context.People.Add(new Person { Name = "Ahmet", Phone = "123" });
+    _context.People.Add(new Person { Name = "Mehmet", Phone = "123456" });
+
+    _context.SaveChanges();
+
+    ////local function içinde kullanılamaz
+    //var persons = _context.People.Where(x=> formatPhone(x.Phone)=="554545").ToList();
+
+    ////data serverdan çekildikten sonra method çalışır, tolist ile çekilir
+    //var personsTo = _context.People.ToList().Where(x => formatPhone(x.Phone) == "554545").ToList();
+
+    ////tolist sonrası isimsiz sınıf ile method kullanarak formatlı telefon çekildi
+    //var person = _context.People.ToList().Select(x=> new { x.Name, Phone = formatPhone(x.Phone) }).ToList();
+
+
+    //Console.WriteLine("işlem bitti.");
+
+    //string formatPhone(string phone)
+    //{
+    //    return phone.Substring(0, 3) + "****" + phone.Substring(7);
+    //}
+
+    ////sql sorgusu çekip mapleme işlemi
+    //var productFulls = _context.ProductFulls.FromSqlRaw(@"select p.Id 'Product_Id', c.Name 'CategoryName', p.Name, p.price, pf.Height from Products p join productFeatures pf on p.Id = pf.Id join Categories c on p.CategoryId=c.Id").ToList();
+
+
+
+    //var category = _context.Categories.First();
+    //Console.WriteLine("Lazy loading için product ayrıldı, sadece category çekilecek");
+    //var product = category.Products.First();
+
+    // aradaki işlemlerde veri ihtiyacımız yok ise
+    // Eager loading ile veriyi daha sonra çekiyoruz
+
+    //if(true)
+    //{
+    //    //explicit loading
+    //    //ihtiyacımız olduğunda veriyi daha sonra çektik
+    //    _context.Entry(category).Collection(x => x.Products).Load();
+    //    //birebir ilişki olduğu için referans tipi ile çekiyoruz
+    //    _context.Entry(product).Reference(x => x.ProductFeature).Load();
+    //}
+
+
+
+    // Include ile ilişkili tabloları çekebiliriz ve eager loading yaparız //ThenInclude ile products içindekileri çekiyoruz
+    //_context.Categories.Include(x => x.Products).ThenInclude(x=>x.ProductFeature);
 
     //var student = new Student() { Name = "A" ,Age= 25};
     //student.Teachers.Add(new Teacher() { Name = "Ahmet" });

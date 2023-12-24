@@ -5,21 +5,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UdemyEFCore.CodeFirst.Models;
 
 namespace UdemyEFCore.CodeFirst.DAL
 {
     public class AppDbContext:DbContext
     {
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Person> People { get; set; }
 
+        //Eğer buraya miras alınan sınıfı eklersek bütün alt sınıflarını kendi tablosunda toplar
+        //public DbSet<BasePerson> People { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Manager> Managers { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductFeature> ProductFeatures { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        //alt taraf migrationa eklenmeyecek
+        public DbSet<ProductEssential> ProductEssentials { get; set; }
+        public DbSet<ProductFull> ProductFulls { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             Initializer.Build();
-            optionsBuilder.UseSqlServer(Initializer.Configuration.GetConnectionString("SqlServer"));
+            //laszy loading kontrolü, information logları kontrolü // console yazdırma
+            optionsBuilder.LogTo(Console.WriteLine,Microsoft.Extensions.Logging.LogLevel.Information).UseLazyLoadingProxies().UseSqlServer(Initializer.Configuration.GetConnectionString("SqlServer"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -69,7 +80,45 @@ namespace UdemyEFCore.CodeFirst.DAL
             //modelBuilder.Entity<Product>().Property(x => x.Price).ValueGeneratedOnAddOrUpdate // computed
             //modelBuilder.Entity<Product>().Property(x => x.Price).ValueGeneratedNever// none
 
+            //modelBuilder.Entity<Product>().Property(x=>x.Price).HasPrecision(18,2); //toplam 18 karakter, virgülden sonra iki karakter
 
+
+            //TPT tipe göre tablo oluşturma
+            //modelBuilder.Entity<BasePerson>().ToTable("People");
+            //modelBuilder.Entity<Manager>().ToTable("Managers");
+            //modelBuilder.Entity<Employee>().ToTable("Employees");
+
+            //fluent api ile owned type oluşturma
+            //modelBuilder.Entity<Employee>().OwnsOne(x => x.BasePerson);
+
+            //fluent api ile keyless type oluşturma
+            //modelBuilder.Entity<ProductFull>().HasNoKey();
+
+            //fluent api ile notmapped
+            //modelBuilder.Entity<Product>().Ignore(x => x.Barcode);
+
+            //fluent api ile unicode
+            //modelBuilder.Entity<Product>().Property(x => x.Name).IsUnicode(false); // varchar
+
+            //fluent api columntype
+            //modelBuilder.Entity<Product>().Property(x => x.Url).HasColumnType("varchar(100)");
+
+            //fluent api ile index oluşturma
+            //modelBuilder.Entity<Product>().HasIndex(Product => new { Product.Name, Product.Price }).IsUnique();
+
+            //fluent api ile property içeren index oluşturma
+            //eğer name ile sorgu yaptığımda en çok price kullanıyorsam
+            //modelBuilder.Entity<Product>().HasIndex(Product => new { Product.Name}).IncludeProperties(x=>x.Price);
+
+            //fluent api ile unique index oluşturma// sql tarafında kurak ile kayıt
+            //modelBuilder.Entity<Product>().HasCheckConstraint("PriceDiscountCheck", "[Price]>[DiscountPrice]");
+
+
+            //custom sql sorgusu ile veri çekme
+            //modelBuilder.Entity<Product>().HasNoKey().ToSqlQuery("Select Name, Price From Products");
+
+            //eğer sql üzerindeki view çekmek istiyorsak
+            modelBuilder.Entity<ProductFull>().HasNoKey().ToView("Productwithfeature");
 
             base.OnModelCreating(modelBuilder);
         }
