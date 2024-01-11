@@ -29,6 +29,7 @@ namespace UdemyEFCore.CodeFirst.DAL
         public int Barcode { get; set; }
         //public DateTime? CreatedDate { get; set; }
         public int CategoryId { get; set; }
+        public bool IsDeleted { get; set; }
         //Navgation property
         //[ForeignKey(nameof(CategoryId))]// migration öncesi için
         //lazyloadin için virtual olarak işaretlendi

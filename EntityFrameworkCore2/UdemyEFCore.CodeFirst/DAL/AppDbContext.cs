@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,25 @@ namespace UdemyEFCore.CodeFirst.DAL
 {
     public class AppDbContext:DbContext
     {
+        // private readonly int Barcode;
+
+        // public AppDbContext(int barcode)
+        // {
+        //     Barcode = barcode;
+        // }
+
+        private DbConnection _connection;
+
+        public AppDbContext(DbConnection connection)
+        {
+            _connection = connection;
+        }
+
+        public AppDbContext()
+        {
+
+        }
+
         public DbSet<Person> People { get; set; }
 
         //Eğer buraya miras alınan sınıfı eklersek bütün alt sınıflarını kendi tablosunda toplar
@@ -26,11 +46,39 @@ namespace UdemyEFCore.CodeFirst.DAL
         public DbSet<ProductEssential> ProductEssentials { get; set; }
         public DbSet<ProductFull> ProductFulls { get; set; }
 
+        public DbSet<ProductFull> productFulls { get; set; }
+
+        public DbSet<ProductCount> ProductCounts { get; set; }
+
+        public IQueryable<ProductFeature> GetProductWithFeatures(int categoryId)
+        {
+            return FromExpression(()=> GetProductWithFeatures(categoryId)); // sql table function
+        }
+
+        public int GetProductCount(int categoryId)
+        {
+            throw new Exception(); // gövdenin bir önemi yok. Ef core'da scaeler kullanmak için. ef core tarafından çalıştırılmaktadır
+        }
+            
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            Initializer.Build();
-            //laszy loading kontrolü, information logları kontrolü // console yazdırma
-            optionsBuilder.LogTo(Console.WriteLine,Microsoft.Extensions.Logging.LogLevel.Information).UseLazyLoadingProxies().UseSqlServer(Initializer.Configuration.GetConnectionString("SqlServer"));
+            if(_connection==default(DbConnection))
+            {
+                Initializer.Build();
+                //laszy loading kontrolü, information logları kontrolü // console yazdırma
+                optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information).UseLazyLoadingProxies()
+                .UseSqlServer(Initializer.Configuration.GetConnectionString("SqlServer"))
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking); // tracking işlemini kapatır, performans için
+            }
+            else
+            {
+                // Multiple DbContext
+                //laszy loading kontrolü, information logları kontrolü // console yazdırma
+                optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information).UseLazyLoadingProxies()
+                .UseSqlServer(_connection)
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking); // tracking işlemini kapatır, performans için
+            }
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -118,7 +166,23 @@ namespace UdemyEFCore.CodeFirst.DAL
             //modelBuilder.Entity<Product>().HasNoKey().ToSqlQuery("Select Name, Price From Products");
 
             //eğer sql üzerindeki view çekmek istiyorsak
-            modelBuilder.Entity<ProductFull>().HasNoKey().ToView("Productwithfeature");
+            // modelBuilder.Entity<ProductFull>().HasNoKey().ToView("Productwithfeature");
+
+            // modelBuilder.Entity<Product>().Property(x => x.IsDeleted).HasDefaultValue(false); // default değer atama
+
+            // modelBuilder.Entity<Product>().HasQueryFilter(x => x.IsDeleted == false); // silinmiş ürünleri getirmesin
+            
+            // modelBuilder.Entity<Product>().HasQueryFilter(p=>p.Barcode==Barcode);
+
+            modelBuilder.Entity<ProductFull>().HasNoKey(); // storud procedure ile veri çekme id olmamalı
+
+            modelBuilder.Entity<ProductFull>().ToFunction("GetProductFulls"); // function ile veri çekme
+
+            modelBuilder.HasDbFunction(typeof(AppDbContext).GetMethod(nameof(GetProductWithFeatures),new [] {typeof(int)})!).HasName("fc_product_full_with_parameters");            
+
+            modelBuilder.HasDbFunction(typeof(AppDbContext).GetMethod(nameof(GetProductCount),new [] {typeof(int)})!).HasName("fc_get_products_count");            
+
+            modelBuilder.Entity<ProductCount>().HasNoKey();
 
             base.OnModelCreating(modelBuilder);
         }
