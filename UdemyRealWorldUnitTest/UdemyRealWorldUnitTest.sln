@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34407.89
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UdemyRealWorldUnitTest.Web", "UdemyRealWorldUnitTest.Web\UdemyRealWorldUnitTest.Web.csproj", "{AF99A95E-3D4C-4A64-B411-4C7F0226E2C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyRealWorldUnitTest.Test", "UdemyRealWorldUnitTest.Test\UdemyRealWorldUnitTest.Test.csproj", "{24965D7A-8495-4D13-B706-2A47383A8CCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF99A95E-3D4C-4A64-B411-4C7F0226E2C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF99A95E-3D4C-4A64-B411-4C7F0226E2C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF99A95E-3D4C-4A64-B411-4C7F0226E2C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF99A95E-3D4C-4A64-B411-4C7F0226E2C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24965D7A-8495-4D13-B706-2A47383A8CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24965D7A-8495-4D13-B706-2A47383A8CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24965D7A-8495-4D13-B706-2A47383A8CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24965D7A-8495-4D13-B706-2A47383A8CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1B3C67F-3424-41F7-892A-1E68D4A9801A}
+	EndGlobalSection
+EndGlobal
