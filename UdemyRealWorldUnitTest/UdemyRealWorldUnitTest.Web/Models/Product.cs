@@ -17,5 +17,10 @@ namespace UdemyRealWorldUnitTest.Web.Models
 
         [Required]
         public string Color { get; set; }
+
+        [Required]
+        public Category Category { get; set; }
+
+        public int CategoryId { get; set; }
     }
 }

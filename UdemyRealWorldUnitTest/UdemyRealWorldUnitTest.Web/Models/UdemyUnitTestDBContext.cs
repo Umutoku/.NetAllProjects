@@ -17,6 +17,8 @@ namespace UdemyRealWorldUnitTest.Web.Models
 
         public virtual DbSet<Product> Product { get; set; }
 
+        public virtual DbSet<Category> Category { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>(entity =>
@@ -26,6 +28,15 @@ namespace UdemyRealWorldUnitTest.Web.Models
                 entity.Property(e => e.Name).HasMaxLength(200);
 
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
+            });
+
+            modelBuilder.Entity<Category>(entity =>
+            {
+                entity.HasData(
+                 new Category { Id = 1, Name = "Kalemler" },
+                 new Category { Id = 2, Name = "Defterler" },
+                 new Category { Id = 3, Name = "Silgiler" }
+                );
             });
 
             OnModelCreatingPartial(modelBuilder);
