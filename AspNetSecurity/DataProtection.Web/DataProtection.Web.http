@@ -1,0 +1,6 @@
+@DataProtection.Web_HostAddress = http://localhost:5221
+
+GET {{DataProtection.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
