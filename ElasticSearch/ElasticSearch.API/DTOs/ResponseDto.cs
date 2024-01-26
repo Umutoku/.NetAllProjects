@@ -27,5 +27,14 @@ namespace ElasticSearch.API.DTOs
                 HttpStatusCode = httpStatusCode
             };
         }
+
+        public static ResponseDto<T> Fail(string errors, HttpStatusCode httpStatusCode)
+        {
+            return new ResponseDto<T>
+            {
+                Errors = new List<string> { errors},
+                HttpStatusCode = httpStatusCode
+            };
+        }
     }
 }
