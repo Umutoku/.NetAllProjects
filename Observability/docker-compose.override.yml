@@ -1,0 +1,64 @@
+version: '3.4'
+services:
+  jaeger:
+   container_name: "jaeger"
+   ports:
+   - 4317:4317 # grpc
+   - 4318:4318 # http
+   - 16686:16686 # http ui
+  # zipkin:
+  #  container_name: "zipkin"
+  #  ports:
+  #  - 9411:9411 # http
+  redis:
+   container_name: "redis"
+   ports:
+    - 6379:6379 # redis
+  RabbitMQ:
+   container_name: "RabbitMQ"
+   ports:
+     - 5672:5672 # amqp
+     - 15672:15672 # http ui  
+  Elasticsearch:
+   container_name: "Elasticsearch"
+   ports:
+      - 9200:9200 # http
+      - 9300:9300 # tcp  
+   environment:
+      - xpack.security.enabled=false
+      - "discovery.type=single-node"
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=changeme
+   volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+  Kibana:
+   container_name: "Kibana"
+   ports:
+      - 5601:5601 # http
+   environment:
+      - ELASTICSEARCH_HOSTS=http://Elasticsearch:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=changeme
+   depends_on:
+      - Elasticsearch
+  otel-collector:
+   container_name: "otel-collector"
+   ports:
+      - 1888:1888 # pprof extension
+      - 8888:8888 # prometheus metrics exposed by the collector
+      - 8889:8889 # prometheus exporter metrics
+      - 13133:13133 # health_check extension
+      - 4317:4317 # grpc
+      - 4318:4318 # http
+      - 55679:55679 # zpages extension
+   volumes:
+   - ./otel-collector-config.yml:/etc/otel-collector-config.yml
+  metric.api:
+   ports:
+   - 5010:8080
+  prometheus:
+   container_name: "prometheus"
+   ports:
+    - 9090:9090
+volumes:
+   elastic_data:

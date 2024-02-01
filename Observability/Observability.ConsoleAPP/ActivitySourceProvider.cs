@@ -10,5 +10,7 @@ namespace Observability.ConsoleAPP
     internal static class ActivitySourceProvider
     {
         public static ActivitySource source = new(OpenTelemetryConstants.ActivitySourceName);
+        public static ActivitySource SourceFile = new ActivitySource(OpenTelemetryConstants.ActivitySourceFileName);
+
     }
 }
