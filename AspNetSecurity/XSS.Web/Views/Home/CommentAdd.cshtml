@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CommentAdd</title>
+</head>
+<body>
+    <form asp-antiforgery="false" method="post" action="/Home/CommentAdd"> <!-- Antiforgery token kapatıldı -->
+        <input type="text" name="name"
+        <input type="text" name="comment" />
+        <input type="submit" value="Add" />
+    </form>
+
+    <h1>Comments</h1>
+    <strong>@ViewBag.name</strong>
+    <hr/>
+    <p>@Html.Raw(ViewBag.comment)</p> @* XSS saldırıları için tehlikeli *@
+    @if(ViewBag.comments != null)
+    {
+        foreach(var comment in ViewBag.comments)
+        {
+            <strong>@comment.Name</strong>
+            <hr/>
+            <p>@Html.Raw(comment.Comment)</p> @* XSS saldırıları için tehlikeli *@
+            @* Html raw ile birlikte bir temizleme kütüphanesi kullanılmalı *@
+        };
+    }
+    else
+    {
+        <p>No comments</p>
+    })
+</body>
+</html>

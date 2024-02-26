@@ -1,0 +1,57 @@
+﻿@using AzureStorageLibrary.Models
+@model AzureStorageLibrary.Models.Product
+
+
+<h2>Add Product</h2>
+<form class="form-inline" asp-action="@(ViewBag.IsUpdate ? "Update" : "Create")" method="post" enctype="application/x-www-form-urlencoded">
+
+    <input class="form-control mr-1" asp-for="Name" placeholder="Ürün ismi" />
+    <input class="form-control mr-1" asp-for="Price" placeholder="Ürün fiyatı" />
+    <input class="form-control mr-1" asp-for="Stock" placeholder="Ürün stoğu" />
+    <input class="form-control mr-1" asp-for="Color" placeholder="Ürün rengi" />
+
+    <input type="hidden" asp-for="RowKey" />
+    <input type="hidden" asp-for="PartitionKey" />
+    <input type="hidden" asp-for="ETag" />
+    <input class=" btn btn-primary" type="submit" value="@(ViewBag.IsUpdate ? "Ürün Güncelle" : "Ürün Kaydet")" />
+</form>
+
+<h2>Products</h2>
+<form class="form-inline mb-2" asp-action="Query" method="Get">
+
+    <input class="form-control mr-2" type="number" name="price" />
+    <input type="submit" class="btn btn-dark" value="Query" />
+</form>
+<table class="table table-bordered">
+    <tr>
+        <th>RowKey</th>
+        <th>Name</th>
+        <th>Price</th>   
+        <th>PartitionKey</th>
+        <th>Color</th>
+        <th>ETag</th>
+        <th>Timestamp</th>
+        <th>Stock</th>
+    </tr>
+
+
+@foreach (var item in ViewBag.Products as List<Product>)
+{
+    <tr>
+        <td>@item.RowKey</td>
+        <td>@item.Name</td>
+        <td>@item.Price</td>
+        <td>@item.PartitionKey</td>
+        <td>@item.Color</td>
+        <td>@item.ETag</td>
+        <td>@item.Timestamp</td>
+        <td>@item.Stock</td>
+            <td>
+                <a class="btn btn-success mr-1 btn-sm" asp-action="UpdateForm" asp-controller="TableStorages" asp-route-rowKey="@item.RowKey" asp-route-partitionKey="@item.PartitionKey">Update</a>
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-controller="TableStorages" asp-route-rowKey="@item.RowKey" asp-route-partitionKey="@item.PartitionKey">Delete</a>
+             </td>
+
+
+    </tr>
+}
+</table>

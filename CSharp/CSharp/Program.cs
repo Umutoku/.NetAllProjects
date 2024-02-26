@@ -1,12 +1,13 @@
 ﻿using CSharp;
 using System.Collections;
+using System.Diagnostics;
 
 public delegate void FullName(string name, string lastname);
 internal class Program
 {
     //public delegate bool promosnyonDelegate(isci isci);
 
-    public delegate void speedDelegate(int speedValue);
+    public delegate void speedDelegate(int speedValue); // sayesinde eventlerde kullanabiliriz. Eğer eventlerde delegate kullanmazsak eventlerde sadece void kullanabiliriz.
     public static void Main(string[] args)
     {
         //FullName full = new(FullNameMethod1);
@@ -30,7 +31,7 @@ internal class Program
         //isimler1.Add(new StreamReader("stream"));
 
 
-        isci i1 = new isci{ isim= "umut", soyisim= "oku", maas= 1000,tecrube = 1 };
+        isci i1 = new isci { isim = "umut", soyisim = "oku", maas = 1000, tecrube = 1 };
 
         isci i2 = new isci { isim = "berke", soyisim = "yorul", maas = 2000, tecrube = 2 };
 
@@ -78,7 +79,7 @@ internal class Program
 
         int cikar;
         int carp;
-        int topla = islem(2, 3,out carp,out cikar);
+        int topla = islem(2, 3, out carp, out cikar);
         //Console.WriteLine(topla +" "+ carp+""+cikar);
 
 
@@ -96,15 +97,139 @@ internal class Program
         int sayi = 10;
         sayi.ciftMi();
 
-        urun urun = new(2,"selam");
+        urun urun = new(2, "selam");
         urun urun1 = new(2);
         urun urun2 = new();
 
-        dikdortgen d1 = new dikdortgen{uzunluk = 10, yukseklik= 5 };
+        dikdortgen d1 = new dikdortgen { uzunluk = 10, yukseklik = 5 };
         dikdortgen d2 = new dikdortgen { uzunluk = 20, yukseklik = 10 };
-        dikdortgen d3 = new dikdortgen { uzunluk = d1.uzunluk+d2.uzunluk, yukseklik = d1.yukseklik+d2.yukseklik };
+        dikdortgen d3 = new dikdortgen { uzunluk = d1.uzunluk + d2.uzunluk, yukseklik = d1.yukseklik + d2.yukseklik };
         dikdortgen d4 = d1 + d2;
 
+        int minVal = int.MinValue;
+        int maxVal = int.MaxValue;
+
+        checked // eğer checked kullanmazsak hata vermez
+        {
+            minVal--; // checked sayesinde hata verir
+            maxVal--; // checked sayesinde hata verir
+        }
+
+        var student = new Student { Name = "umut", Surname = "oku" };
+        var str = student.ToString(); // sayesinde student classının içindeki ToString methodunu çalıştırır. Eğer ToString methodu yoksa object classının ToString methodunu çalıştırır.
+
+
+
+        var list = new List<int> { 1, 2, 3, 4, 5 }; // bu yöntemin adı collection initializer
+        var list2 = new List<int>() // bu yöntemin adı object initializer
+        {
+            { 1 },
+            { 2 },
+            { 3 },
+            { 4 },
+            { 5 }
+
+        };
+
+        list.Add(6); // eğer add methodu var ise object initializer kullanabiliriz.
+
+        var list3 = new ObjectInitializerTest<int> { 1, 2, 3, 4, 5 }; // bu yöntemin adı object initializer. ObjectInitializerTest classının içindeki Add methodunu çalıştırır.
+
+         // this keywordü sayesinde index ve val değerlerini birleştirir.
+    }
+
+    public static void InterfaceImplement()
+    {
+        IUser user = new UserClass(); // burada name değeri umut olur. çünkü UserClass referans tip olduğu için user2 değişkeni user değişkenini etkiler.
+        user.Name = "umut";
+        user.Surname = "oku";
+        IUser user2 = user;
+        user2.Name = "berke";
+        //Eğer bir struct iplemente edilirse referans gibi davranır. class gibi 
+        IUser userS = new UserStruct(); // classlar referans tiptir. structlar değer tiptir. burada name değeri umut olur. çünkü UserStruct değer tip olduğu için userS2 değişkeni userS değişkenini etkilemez.
+        userS.Name = "umut";
+        userS.Surname = "oku";
+        IUser userS2 = userS;
+        userS2.Name = "berke";
+    }
+
+
+    public interface IUser
+    {
+        string Name { get; set; }
+        string Surname { get; set; }
+    }
+
+    public class UserClass : IUser
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
+        public UserClass UserClassImp { get; set; }
+    }
+
+    public struct UserStruct : IUser
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        //public UserStruct UserStructImp { get; set; } // Bunu yapamayız çünkü strutlar bir yer tuttuğu için sonsuz döngüye girer.
+    }
+
+    public abstract class BaseClass
+    {
+    }
+    
+    public class DerivedClass : BaseClass
+    {
+        public void BaseMethod()
+        {
+            Console.WriteLine("DerivedClass");
+        }
+    }
+
+    public class DerivedClass2 : DerivedClass
+    {
+        public new void BaseMethod() // new keywordü sayesinde BaseMethod methodunu gizler.
+        {
+            Console.WriteLine("DerivedClass2");
+        }
+    }
+
+    public class ObjectInitializerTest<T> : IEnumerable<T>
+    {
+        public void Add(T item)
+        {
+
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return null;
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return null;
+        }
+
+        public string this[int index, string val] // this keywordü sayesinde index ve val değerlerini birleştirir.
+        {
+            get => $"{index} {val}"; // index ve val değerlerini birleştirir.
+        }
+    }
+
+    [DebuggerDisplay("{DebugDisplay}")] // sayesinde debug ekranında tostring değil DebugDisplay methodunun içeriğini gösterir.
+    class Student
+    {
+        public string Name { get; set; }
+        public string Surname { get; set; }
+
+        public override string ToString()
+        {
+            return Name + " " + Surname;
+        }
+
+        public string DebugDisplay => Name + " " + Surname; // sayesinde debug modda bu methodu çalıştırır.
     }
 
     class dikdortgen
@@ -194,8 +319,6 @@ internal class Program
         return a + b;
     }
 
-
-
     private static void C_speedEvent(int speedValue)
     {
         Console.WriteLine("Araba hızını aştı."+speedValue);
@@ -250,7 +373,7 @@ internal class Program
         public int tecrube { get; set; }
 
 
-        public static void promosyon(List<isci> isciler,Func<isci,bool> promosnyonDelegate )
+        public static void promosyon(List<isci> isciler,Func<isci,bool> promosnyonDelegate ) // sayesinde promosyonu istediğimiz şekilde yapabiliriz
         {
             foreach(var i in isciler)
             {
@@ -298,4 +421,9 @@ internal class Program
     {
         Console.WriteLine(lastname.ToUpper() + " " + name.ToUpper());
     }
+
+    int minVal = int.MinValue;
+    int maxVal = int.MaxValue;
+
+
 }
