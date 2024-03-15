@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+option csharp_namespace = "GrpcService.Protos";
+
+package product;
+
+service Product {
+  rpc SaveProduct (ProductModel) returns (ProductSaveResponse); // ProductModel tipinde bir parametre alıp ProductSaveResponse tipinde bir değer döndürecek
+  rpc GetProducts (google.protobuf.Empty) returns (ProductList);
+}
+
+message ProductList{
+	repeated ProductModel Products = 1;
+}
+
+message ProductModel {
+  string Name = 1;
+  int32 Price = 2;
+  string Code = 3;
+  google.protobuf.Timestamp CreatedDate = 4;
+}
+
+message ProductSaveResponse {
+  bool Success = 1;
+  string Message = 2;
+}
