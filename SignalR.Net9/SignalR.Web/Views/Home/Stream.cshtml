@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Stream";
+}
+@section Scripts {
+    <script src="~/js/signalr-client-stream.js"></script>
+}
+<h1>Stream</h1>
+<input class="form-control" id="txt-stream" type="text" value="ahmet;mehmet;ihsan;demet;selin;ayşe" />
+<button class="btn btn-primary my-2" id="btn-from-client-to-hub">Stream</button>
+<button class="btn btn-primary my-2" id="btn-from-client-to-hub-product">Product</button>
+<button class="btn btn-primary my-2" id="btn-from-hub-to-client">Hubdan stream</button>
+
+<div id="streamBox" class="alert alert-info">
+
+</div>
+

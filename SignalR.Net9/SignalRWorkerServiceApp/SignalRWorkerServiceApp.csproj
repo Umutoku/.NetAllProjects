@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-SignalRWorkerServiceApp-3da9f465-98c8-431e-8837-068cbbf24f13</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.0-preview.3.24172.13" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0-preview.1.24080.9" />
+  </ItemGroup>
+</Project>
