@@ -23,8 +23,10 @@ namespace AspNetCoreIdentityApp.Web.Extensions
 
             }).AddEntityFrameworkStores<AppDbContext>() // Identity verilerinin nerede saklanacağını belirler
             .AddPasswordValidator<PasswordValidator<AppUser>>()
-            .AddErrorDescriber<LocalizationIdentityErrorDescriber>()   
-            .AddUserValidator<UserValidator<AppUser>>(); // Custom validatorları ekler
+            .AddErrorDescriber<LocalizationIdentityErrorDescriber>()
+            .AddUserValidator<UserValidator<AppUser>>()// Custom validatorları ekler
+            .AddDefaultTokenProviders(); // Token providerları ekler
+
             ;
         }
     }

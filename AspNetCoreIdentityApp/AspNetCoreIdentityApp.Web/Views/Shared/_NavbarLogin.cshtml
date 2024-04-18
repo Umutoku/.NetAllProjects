@@ -16,7 +16,7 @@
 
 
                 @if (User.HasClaim(x => x.Type == ClaimTypes.Role && x.Value == "admin"))
-                {
+                { 
                     <li><a class="dropdown-item" asp-area="admin" asp-controller="Home" asp-action="Index">Admin</a></li>
                 }
                 <li><a class="dropdown-item" asp-route-returnurl="/Home/Index" asp-controller="Member" asp-action="logout">Çıkış yap</a></li>

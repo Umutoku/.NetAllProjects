@@ -1,5 +1,6 @@
 ﻿using AspNetCoreIdentityApp.Web.Extensions;
 using AspNetCoreIdentityApp.Web.Models;
+using AspNetCoreIdentityApp.Web.Services;
 using AspNetCoreIdentityApp.Web.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,12 +14,14 @@ namespace AspNetCoreIdentityApp.Web.Controllers
 
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IEmailService _emailService;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IEmailService emailService)
         {
             _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
+            _emailService = emailService;
         }
 
         public IActionResult Index()
@@ -68,11 +71,11 @@ namespace AspNetCoreIdentityApp.Web.Controllers
                     }
 
                 }
-                
+
                 ModelState.AddModelError("", $"Email or password is invalid{await _userManager.GetAccessFailedCountAsync(user)}");
                 return View(model);
             }
-            
+
             return View(model);
         }
 
@@ -102,6 +105,83 @@ namespace AspNetCoreIdentityApp.Web.Controllers
             }
 
             return View(model);
+        }
+
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel request)
+        {
+            var user = await _userManager.FindByEmailAsync(request.Email);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", "User not found!");
+                return View(request);
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            var passwordResetLink = Url.Action("ResetPassword", "Home", new { userId = user.Id, token }, Request.Scheme);
+
+            //Email Service
+
+            await _emailService.SendResetPasswordEmail(passwordResetLink, request.Email);
+
+            TempData["SuccessMessage"] = "Şifre sıfırlama linki mail adresinize gönderilmiştir.";
+
+            return RedirectToAction(nameof(ForgetPassword));
+        }
+
+        public IActionResult ResetPassword(string userId, string token)
+        {
+            TempData["userId"] = userId;
+            TempData["token"] = token;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            string userId = TempData["userId"] as string;
+            string token = TempData["token"] as string;
+
+            if(userId == null || token == null)
+            {
+                ModelState.AddModelError("", "Invalid token or user id!");
+                return View(model);
+            }
+
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByIdAsync(userId);
+
+                if (user == null)
+                {
+                    ModelState.AddModelError("", "User not found!");
+                    return View(model);
+                }
+
+                var result = await _userManager.ResetPasswordAsync(user, token, model.Password);
+
+                if (result.Succeeded)
+                {
+                    TempData["SuccessMessage"] = "Password reset successfully!";
+                    return RedirectToAction(nameof(SignIn));
+                }
+                else
+                {
+                    ModelState.AddModelErrorList(result.Errors.ToList());
+                }
+
+                return View(model);
+            }
+
+            return View(model);
+            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
